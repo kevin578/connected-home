@@ -1,0 +1,19 @@
+<script>
+    
+    function turnOn() {
+        fetch('/sensors/turn_on', {
+            method: 'POST'
+        })
+    }
+       function turnOff() {
+        fetch('/sensors/turn_off', {
+            method: 'POST'
+        })
+    }
+</script>
+
+<h1>Click to toggle the light</h1>
+<button onclick = "turnOn()">Turn LED on</button>
+<button onclick = "turnOff()">Turn LED off</button>
+
+
