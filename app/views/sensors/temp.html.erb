@@ -1,19 +1,64 @@
 <script>
-    
-    function turnOn() {
+    //17, 25 16
+    function turnOn(led) {
         fetch('/sensors/turn_on', {
-            method: 'POST'
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({led})
         })
     }
-       function turnOff() {
+       
+    function turnOff(led) {
         fetch('/sensors/turn_off', {
-            method: 'POST'
+            method: 'POST',
+            body: JSON.stringify({led}),
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
         })
     }
+        
+    function loopLeds(runLoop) {
+        fetch('/sensors/loopleds', {
+                method: 'POST',
+                body: JSON.stringify({runLoop}),
+                headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+                },
+        })
+    }
+
+    function stopLoop() {
+        fetch('/sensors/stoploop', {
+                method: 'POST'
+            })
+        }
 </script>
 
 <h1>Click to toggle the light</h1>
-<button onclick = "turnOn()">Turn LED on</button>
-<button onclick = "turnOff()">Turn LED off</button>
+<div>
+<button onclick = "turnOn(17)">Turn LED 1 on</button>
+<button onclick = "turnOff(17)">Turn LED 1 off</button>
+</div>
+
+<div>
+<button onclick = "turnOn(25)">Turn LED 2 on</button>
+<button onclick = "turnOff(25)">Turn LED 2 off</button>
+</div>
+
+<div>
+<button onclick = "turnOn(16)">Turn LED 3 on</button>
+<button onclick = "turnOff(16)">Turn LED 3 off</button>
+</div>
+
+<div>
+<button onclick = "loopLeds(true)">Loop LEDs </button>
+<button onclick = "loopLeds(false)">Stop loop</button>
+</div>
 
 
