@@ -1,3 +1,7 @@
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script>
     //17, 25 16
     function turnOn(led) {
@@ -35,9 +39,25 @@
 
     function stopLoop() {
         fetch('/sensors/stoploop', {
-                method: 'POST'
+            method: 'POST'
+        })
+    }
+
+    $(window).ready(()=> {
+        $('#ledPauseInput').change((e)=> {
+            $('#ledPauseValue').html(e.target.value)
+            fetch('/sensors/changepausevalue', {
+                method: 'POST',          
+                headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'},    
+                body: JSON.stringify({
+                    pauseValue: e.target.value
+                })
             })
-        }
+        })
+    });
+    
 </script>
 
 <h1>Click to toggle the light</h1>
@@ -59,6 +79,10 @@
 <div>
 <button onclick = "loopLeds(true)">Loop LEDs </button>
 <button onclick = "loopLeds(false)">Stop loop</button>
+<didv>
+<span>LED pause time:</span>
+<input type="range" min=".1" max="2" step="0.05" value="0.5" id = "ledPauseInput"/>
+<span id = "ledPauseValue">.5</span>
 </div>
 
 
