@@ -1,14 +1,14 @@
 require "#{Rails.root}/app/lib/led_control"
 require 'rpi_gpio'
 
-class SensorsController < ApplicationController
+class LedController < ApplicationController
   @@thread = Thread.new {}
   @@pause_value = 0.5
   include LedControl
   skip_before_action :verify_authenticity_token
   runLoop = false
 
-  def temp
+  def index
     setupLEDs
   end
 
