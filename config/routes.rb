@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  match '/led' => 'led#index', via: :get
+  get '/led', to: 'led#index'
+  get '/temperature', to: 'temperature#index'
+  get '/apostrophe', to: 'apostrophe#index'
   match '/led/turn_on' => 'led#turn_on', via: :post
   match '/led/turn_off' => 'led#turn_off', via: :post
   match '/led/loopleds' => 'led#loop_leds', via: :post

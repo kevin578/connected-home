@@ -1,0 +1,21 @@
+
+<svg width="788px" height="93px" viewBox="0 0 815 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <text id="text-1" font-family="SignPainter-HouseScriptSemibold, SignPainter" font-size="122" font-style="condensed" font-weight="500" fill="#FFFFFF">
+            <tspan x="131" y="115">Alissa &amp; Kevin’s Place</tspan>
+        </text>
+        <filter x="-0.5%" y="-5.5%" width="102.0%" height="114.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="4" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="1">
+        <g id="Desktop" transform="translate(-131.000000, -34.000000)" fill="#FFFFFF">
+            <g id="Alissa-&amp;-Kevin’s-Pla">
+                <use filter="url(#filter-2)" xlink:href="#text-1"></use>
+                <use xlink:href="#text-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
