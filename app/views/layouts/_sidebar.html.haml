@@ -1,7 +1,7 @@
 .sidebar
-    %a{ :href => "/led", id: 'ledLink', class: "sidebar__link", width: "30px"}
-        =image_tag  "led.png", class: "sidebar__img sidebar__img__led sidebar__img--active"
-    %a{ :href => "/temperature", id: 'temperature', class: "sidebar__link "}
-        =image_tag  "thermometer.png", class: "sidebar__img sidebar__img--inactive "
-    %a{ :href => "/apostrophe", id: 'apostrophe',class: "sidebar__link"}
-        =image_tag  "cat.png", class: "sidebar__img sidebar__img--inactive"
+    %a{ :href => "/led", id: 'led-link', class: "sidebar__link", width: "30px"}
+        =image_tag  "led.png", id: 'led-img', class: "sidebar__img sidebar__img__led"
+    %a{ :href => "/temperature", id: 'temperature-link', class: "sidebar__link "}
+        =image_tag  "thermometer.png", id: 'temperature-img', class: "sidebar__img "
+    %a{ :href => "/apostrophe", id: 'apostrophe-link',class: "sidebar__link"}
+        =image_tag  "cat.png", id: 'apostrophe-img', class: "sidebar__img"
